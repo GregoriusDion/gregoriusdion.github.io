@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Panel Admin</title><meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="Paroki Hati Tak Bernoda Santa Perawan Maria Boyolali_files/logo-paroki.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--b:#1c3763;--g:#b48a2c;--iv:#faf6ec;--ink:#22273a;--ln:#e3dac3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--iv)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.2;margin:0 0 .5em}
+a{color:inherit}img{max-width:100%;display:block}[hidden]{display:none!important}
+.w{max-width:1100px;margin:auto;padding:0 18px}section{padding:56px 0;scroll-margin-top:96px}
+header{position:sticky;top:0;z-index:30;background:var(--iv);box-shadow:0 1px 6px #0002}
+.top{background:var(--b);color:#fff;font-size:13px}.top .w{display:flex;gap:12px;align-items:center}
+.tk{flex:1;overflow:hidden;white-space:nowrap}.tr{display:inline-block;animation:mq 40s linear infinite}.tk:hover .tr{animation-play-state:paused}
+.tr span{padding:0 28px}@keyframes mq{to{transform:translateX(-50%)}}
+.lg{margin-left:auto;display:flex;border:1px solid #fff6;border-radius:99px;overflow:hidden}
+.lg button{background:none;border:0;color:#fff;padding:5px 12px;font-weight:600;cursor:pointer}.lg .on{background:#fff;color:var(--b)}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:10px 18px;max-width:1100px;margin:auto;border-bottom:2px solid #b48a2c55}
+.br{display:flex;gap:10px;align-items:center;text-decoration:none;font-family:Fraunces,serif;color:var(--b)}.br img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+nav{display:flex;gap:4px;flex-wrap:wrap}nav a{padding:8px 10px;text-decoration:none;font-size:14px;font-weight:600;border-radius:6px}nav a:hover{background:#b48a2c22}
+#mb{display:none;background:none;border:1px solid var(--ln);border-radius:8px;font-size:22px;padding:2px 10px;cursor:pointer}
+@media(max-width:860px){#mb{display:block}nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--iv);flex-direction:column;padding:8px 18px;box-shadow:0 8px 12px #0002}nav.open{display:flex}}
+.hero{position:relative;min-height:70vh;display:flex;align-items:flex-end;color:#fff;padding:0}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(#0000,#10213fd9);z-index:1}
+.hero .w{position:relative;z-index:2;padding-bottom:48px;padding-top:120px}.hero h1{font-size:clamp(28px,5vw,52px);max-width:780px}
+.btn{display:inline-block;padding:11px 22px;border-radius:99px;background:var(--g);color:#fff;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:15px}.btn.o{background:none;border:1px solid #fff}
+.g2{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:center}
+.st{display:grid;grid-template-columns:1fr 1fr;gap:12px}.st div{border-left:3px solid var(--g);padding:4px 14px}.st b{font:600 30px Fraunces,serif;color:var(--b);display:block}
+.alt{background:#fff}
+.gr{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.cd{background:#fff;border:1px solid var(--ln);border-radius:10px;padding:18px}.alt .cd{background:var(--iv)}.cd h3{font-size:18px;color:var(--b)}.cd p{margin:.2em 0}
+.jm{font:600 26px Fraunces,serif;color:var(--g)}
+.rn{background:var(--b);color:#fff}.rn blockquote{margin:12px 0;padding-left:16px;border-left:3px solid var(--g);font-size:19px;font-family:Fraunces,serif}
+details{background:#fff;border:1px solid var(--ln);border-radius:10px;margin-bottom:10px;overflow:hidden}
+summary{padding:14px 18px;cursor:pointer;font-weight:600;color:var(--b)}summary small{display:block;color:#6b6f80;font-weight:400}
+details .in{padding:0 18px 16px}details img{border-radius:8px;margin:0 0 12px;max-height:320px;object-fit:cover}
+.gl{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}.gl img{aspect-ratio:4/3;width:100%;object-fit:cover;border-radius:8px;cursor:zoom-in}
+#lb{position:fixed;inset:0;background:#000d;z-index:99;display:flex;align-items:center;justify-content:center;padding:20px}#lb img{max-height:90vh;object-fit:contain}
+footer{background:#14264a;color:#dfe5f3;padding:48px 0 20px;font-size:14px}footer a{color:#f2d38b}footer .gr{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}footer h3{color:#fff;font-size:17px}
+.sc a{margin-right:12px}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#14264a;color:#fff;padding:10px 20px;border-radius:99px;z-index:100;opacity:0;transition:.3s;pointer-events:none}#toast.on{opacity:1}
+/* admin */
+#adm{min-height:100vh;background:#eef1f6}.ah{background:var(--b);color:#fff;padding:12px 18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:5}.ah b{font-family:Fraunces,serif;flex:1}
+.ah a,.ah button{color:#fff;background:#fff2;border:0;border-radius:8px;padding:7px 14px;text-decoration:none;cursor:pointer;font:inherit;font-size:14px}
+.ab{display:grid;grid-template-columns:210px 1fr;gap:20px;max-width:1100px;margin:auto;padding:20px 18px}
+.tabs{display:flex;flex-direction:column;gap:4px;position:sticky;top:70px;align-self:start}.tabs button{text-align:left;padding:10px 14px;border:0;border-radius:8px;background:none;cursor:pointer;font:inherit;font-weight:600}.tabs .on{background:#fff;color:var(--b);box-shadow:0 1px 4px #0002}
+@media(max-width:760px){.ab{grid-template-columns:1fr}.tabs{flex-direction:row;overflow-x:auto;position:static}.tabs button{white-space:nowrap}}
+.pn{background:#fff;border-radius:12px;padding:20px;margin-bottom:16px;box-shadow:0 1px 4px #0001}.pn h2{font-size:22px;color:var(--b)}
+.f{display:block;margin-bottom:12px;font-size:13px;font-weight:600;color:#44506b}
+.f input,.f textarea{display:block;width:100%;margin-top:4px;padding:9px 11px;border:1px solid #c9d1e0;border-radius:8px;font:inherit;font-weight:400;color:var(--ink)}.f textarea{min-height:90px}
+.ir{display:flex;gap:8px}.ir button,.sm{background:#e8edf7;border:0;border-radius:8px;padding:0 12px;cursor:pointer;font:inherit;font-size:13px;white-space:nowrap}
+.it{border:1px solid #dde3ee;border-radius:10px;padding:14px;margin-bottom:12px;background:#fafbfd}.it>div:first-child{display:flex;gap:6px;align-items:center;margin-bottom:10px}.it>div:first-child b{flex:1}.sm{padding:6px 10px}.dg{background:#fde8e8;color:#a31f1f}
+.ad{background:var(--g);color:#fff;border:0;border-radius:8px;padding:10px 18px;cursor:pointer;font:inherit;font-weight:600}
+.th{width:90px;height:60px;object-fit:cover;border-radius:6px}.lgn{max-width:340px;margin:12vh auto;background:#fff;padding:28px;border-radius:14px;box-shadow:0 4px 20px #0002}
+.note{background:#fff7dd;border:1px solid #ecd78a;border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:14px}
+.rw{display:flex;gap:12px;align-items:center;padding:10px 0;border-top:1px solid #e3e8f2}.rw>div{flex:1;min-width:0}.rw small{color:#6b6f80;display:block}</style></head><body>
+<div id="adm"></div><div id="toast"></div>
+<script>
+const F='Paroki Hati Tak Bernoda Santa Perawan Maria Boyolali_files/';
+const DEF={
+umum:{nama:'Paroki Hati Tak Bernoda Santa Perawan Maria Boyolali',singkat:'HTB SPM Boyolali',sub:'Keuskupan Agung Semarang · Kevikepan Surakarta',alamat:'Jl. Merbabu No.24, Singorajan, Siswodipuran, Boyolali 57311',telp:'(0276) 321107',wa:'6281234567890',email:'sekpar.boyolali@kas.id',jam:'Senin–Sabtu 09:00–16:00, Minggu 09:00–12:00',ticker:'Jadwal Misa Jumat Pertama: pukul 17.00 WIB',logo:F+'logo-paroki.jpg',ig:'',fb:'',tt:'',yt:''},
+beranda:{judul:'Paroki Hati Tak Bernoda Santa Perawan Maria, Boyolali',slogan:'Rumah rohani yang berakar pada devosi Maria dan budaya Jawa.',hero:F+'hero-kk2.jpg',tentang:'Paroki Hati Tak Bernoda Santa Perawan Maria Boyolali melayani umat sejak tahun 1961 di bawah penggembalaan imam diosesan Keuskupan Agung Semarang.',donasiTeks:'Dukung pelayanan dan karya paroki melalui rekening berikut.'},
+stat:[{n:'1961',l:'Berdiri'},{n:'12',l:'Wilayah'},{n:'34',l:'Lingkungan'},{n:'Diosesan',l:'Imam'}],
+jadwal:[{hari:'Sabtu',jam:'17:00 WIB',ket:'Misa Minggu (Sabtu sore)'},{hari:'Minggu',jam:'07:00 WIB',ket:'Misa Hari Minggu'},{hari:'Harian',jam:'05:30 WIB',ket:'Misa Harian'},{hari:'Jumat Pertama',jam:'17:00 WIB',ket:'Misa Jumat Pertama'}],
+layanan:[{t:'Sakramen',d:'Baptis, Komuni Pertama, Krisma, Perkawinan, dan Pengurapan Orang Sakit. Hubungi sekretariat paroki untuk pendaftaran dan persyaratan.'},{t:'Formulir & Dokumen',d:'Surat baptis, surat pengantar, dan surat keterangan lain diurus di sekretariat pada jam kantor.'},{t:'Tanya Jawab',d:'Pertanyaan yang sering diajukan seputar pelayanan paroki. Bisa juga ditanyakan lewat WhatsApp sekretariat.'}],
+renungan:[{judul:'Hati yang Bersyukur',ayat:'Lukas 1:46–47',kutipan:'Jiwaku memuliakan Tuhan, dan hatiku bergembira karena Allah, Juru Selamatku.',isi:'Marilah kita mengawali hari dengan hati yang bersyukur.'}],
+berita:[{t:'Selamat Datang di Website Baru Paroki Boyolali',tgl:'2026-07-19',img:'',isi:'Website baru paroki kini hadir dengan informasi jadwal misa, layanan, dan pengumuman.'}],
+galeri:[['HUT20Paroki20ke2064','Perayaan HUT Paroki ke-64'],['Perayaan20Minggu20Palma202025','Perayaan Minggu Palma'],['Pembacaan20kisah20sengsara20Kristus20Minggu20Palma','Pembacaan Kisah Sengsara Kristus'],['Visuailisasi20Kisah20Sengsara20Kristus','Visualisasi Kisah Sengsara Kristus'],['Visualisasi20kisah20sengsara20Kristus','Visualisasi Kisah Sengsara Kristus'],['kisah20sengsara20Yesus','Kisah Sengsara Yesus']].map(a=>({img:F+a[0]+'.jpg',cap:a[1]})),
+donasi:[{bank:'Bank BRI',no:'0000-0000-0000-000',an:'Paroki Boyolali'},{bank:'Bank BCA',no:'000-000-0000',an:'Paroki Boyolali'}]};
+const T={id:{tentang:'Tentang',jadwal:'Jadwal Misa',layanan:'Pusat Layanan',renungan:'Renungan',berita:'Berita',galeri:'Galeri',donasi:'Persembahan',kontak:'Kontak',menu:'Menu',copy:'Salin nomor',copied:'Nomor tersalin',an:'a.n.',jam:'Jam kantor',wa:'Chat WhatsApp',empty:'Belum ada isi.',tel:'Telepon',ikuti:'Ikuti kami',latest:'Berita Terbaru'},
+en:{tentang:'About',jadwal:'Mass Schedule',layanan:'Services',renungan:'Reflection',berita:'News',galeri:'Gallery',donasi:'Donation',kontak:'Contact',menu:'Menu',copy:'Copy number',copied:'Number copied',an:'on behalf of',jam:'Office hours',wa:'Chat on WhatsApp',empty:'Nothing here yet.',tel:'Phone',ikuti:'Follow us',latest:'Latest News'}};
+const SC=[
+{k:'umum',t:'Umum & kontak',f:[['nama','Nama lengkap paroki'],['singkat','Nama singkat'],['sub','Keuskupan / kevikepan'],['alamat','Alamat','ta'],['telp','Nomor telepon'],['wa','WhatsApp (awali 62, tanpa + dan spasi)'],['email','Email'],['jam','Jam kantor'],['ticker','Pengumuman berjalan (kosongkan untuk menyembunyikan)'],['logo','Logo','img'],['ig','Link Instagram'],['fb','Link Facebook'],['tt','Link TikTok'],['yt','Link YouTube']]},
+{k:'beranda',t:'Beranda & profil',f:[['judul','Judul utama'],['slogan','Kalimat pembuka'],['hero','Foto utama','img'],['tentang','Tentang paroki','ta'],['donasiTeks','Teks ajakan persembahan','ta']]},
+{k:'stat',t:'Angka profil',l:1,f:[['n','Angka / isi'],['l','Keterangan']]},
+{k:'jadwal',t:'Jadwal misa',l:1,f:[['hari','Hari'],['jam','Jam'],['ket','Keterangan']]},
+{k:'layanan',t:'Pusat layanan',l:1,f:[['t','Nama layanan'],['d','Rangkuman','ta']]},
+{k:'renungan',t:'Renungan',l:1,m:1,f:[['judul','Judul'],['ayat','Ayat'],['kutipan','Kutipan ayat','ta'],['isi','Renungan','ta']]},
+{k:'berita',t:'Berita',l:1,m:1,f:[['t','Judul'],['tgl','Tanggal','date'],['img','Foto (opsional)','img'],['isi','Isi berita','ta']]},
+{k:'galeri',t:'Galeri',l:1,f:[['img','Foto','img'],['cap','Keterangan']]},
+{k:'donasi',t:'Rekening persembahan',l:1,f:[['bank','Bank'],['no','Nomor rekening'],['an','Atas nama']]}];
+const $=s=>document.querySelector(s),e=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ls=(k,v)=>{try{return v===undefined?localStorage.getItem(k):localStorage.setItem(k,v)}catch(x){return null}};
+let D=JSON.parse(JSON.stringify(DEF)),L=ls('lang')||'id',tab='umum',base=null,RR=null;
+const t=k=>T[L][k]||k;
+function merge(o){for(const k in DEF)if(o&&o[k]!==undefined)D[k]=Array.isArray(DEF[k])?(Array.isArray(o[k])?o[k]:DEF[k]):{...DEF[k],...o[k]}}
+function toast(m){const x=$('#toast');x.textContent=m;x.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>x.classList.remove('on'),2200)}
+function save(){try{localStorage.setItem('pc',JSON.stringify(D));toast('Tersimpan di browser ini')}catch(x){toast('Penyimpanan penuh: pakai foto lebih kecil')}}
+const fd=d=>{try{return new Date(d).toLocaleDateString(L=='id'?'id-ID':'en-GB',{day:'numeric',month:'long',year:'numeric'})}catch(x){return d}};
+let ed=null;
+function mview(sc){const k=sc.k,n=k=='berita',A=D[k],fl='style="display:flex;justify-content:space-between;align-items:center;gap:12px"';
+if(ed!==null&&A[ed])return`<div class=pn><div ${fl}><h2>${n?'Edit berita':'Edit renungan'}</h2><button class=ad data-a=done>Selesai</button></div>${sc.f.map(f=>fld(k,ed,f)).join('')}<button class="sm dg" style="padding:8px 14px" data-a=del data-i=${ed}>Hapus ${n?'berita':'renungan'} ini</button></div>`;
+return`<div class=pn><div ${fl}><h2>${sc.t} (${A.length})</h2><button class=ad data-a=add>+ ${n?'Berita':'Renungan'} baru</button></div>${n?'':'<p class=note>Setiap kali halaman dibuka, satu renungan dipilih acak dari daftar ini.</p>'}${A.map((it,i)=>`<div class=rw>${n&&it.img?`<img class=th src="${e(it.img)}" alt="">`:''}<div><b>${e(it.t||it.judul||'(tanpa judul)')}</b><small>${n?fd(it.tgl):e(it.ayat)}</small></div><button class=sm data-a=edit data-i=${i}>Edit</button><button class="sm dg" data-a=del data-i=${i}>Hapus</button></div>`).join('')||'<p>Belum ada data.</p>'}</div>`}
+
+const val=(s,i,k)=>i===undefined||i===''?D[s][k]:D[s][i][k];
+function fld(s,i,f){const[k,l,ty]=f,v=val(s,i,k)??'',at=`data-s="${s}" data-i="${i??''}" data-k="${k}"`;
+if(ty=='ta')return`<label class=f>${l}<textarea ${at}>${e(v)}</textarea></label>`;
+if(ty=='img')return`<label class=f>${l}<div class=ir><input ${at} value="${e(v)}" placeholder="alamat gambar atau unggah →">${v?`<img class=th src="${e(v)}" alt="">`:''}<button type=button data-up>Unggah</button></div></label>`;
+return`<label class=f>${l}<input ${ty=='date'?'type=date':''} ${at} value="${e(v)}"></label>`}
+function adm(){const a=$('#adm');
+if(sessionStorage.getItem('ok')!='1'){a.innerHTML=`<div class=lgn><h2>Masuk admin</h2><label class=f>Kata sandi<input id=pw type=password autofocus></label><button class=ad id=go>Masuk</button></div>`;$('#pw').onkeydown=x=>{if(x.key=='Enter')$('#go').click()};return}
+const sc=SC.find(x=>x.k==tab);let body='';
+if(tab=='data')body=`<div class=pn><h2>Data & keamanan</h2><div class=note><b>Cara agar perubahan tampil ke semua pengunjung:</b> perubahan tersimpan di browser ini. Klik <i>Unduh content.json</i>, lalu unggah file itu ke folder yang sama dengan index.html di hosting (timpa file lama). Pengunjung akan membaca isi dari file tersebut.</div><p><button class=ad data-a=exp>Unduh content.json</button> <button class=sm data-a=imp>Impor content.json</button> <button class="sm dg" data-a=rst>Kembalikan isi awal</button></p><label class=f>Ganti kata sandi admin<input id=npw type=password placeholder="minimal 6 karakter"></label><button class=sm data-a=pw>Simpan kata sandi</button></div>`;
+else if(sc.m)body=mview(sc);else body=`<div class=pn><h2>${sc.t}</h2>${sc.l?D[sc.k].map((it,i)=>`<div class=it><div><b>${e(it[sc.f[0][0]]||'Item '+(i+1))}</b><button class=sm data-a=up data-i=${i}>↑</button><button class=sm data-a=dn data-i=${i}>↓</button><button class="sm dg" data-a=del data-i=${i}>Hapus</button></div>${sc.f.map(f=>fld(sc.k,i,f)).join('')}</div>`).join('')+`<button class=ad data-a=add>+ Tambah</button>`:sc.f.map(f=>fld(sc.k,'',f)).join('')}</div>`;
+a.innerHTML=`<div class=ah><b>Dashboard admin</b><a href="../index.html" target="_blank">Lihat situs</a><button data-a=out>Keluar</button></div><div class=ab><div class=tabs>${SC.concat([{k:'data',t:'Data & keamanan'}]).map(x=>`<button data-t=${x.k} class="${x.k==tab?'on':''}">${x.t}</button>`).join('')}</div><div>${body}</div></div>`}
+$('#adm').addEventListener('input',x=>{const d=x.target.dataset;if(!d.k)return;const v=x.target.value;d.i===''?D[d.s][d.k]=v:D[d.s][d.i][d.k]=v;clearTimeout(save.t);save.t=setTimeout(save,500)});
+$('#adm').addEventListener('click',x=>{const b=x.target.closest('button');if(!b)return;const d=b.dataset,sc=SC.find(s=>s.k==tab),i=+d.i;
+if(b.id=='go'){if($('#pw').value==(ls('pw')||'admin123')){sessionStorage.setItem('ok','1');adm()}else toast('Kata sandi salah');return}
+if(d.t){tab=d.t;ed=null;adm();return}
+if(d.up!==undefined){const fi=document.createElement('input');fi.type='file';fi.accept='image/*';fi.onchange=()=>rs(fi.files[0],u=>{const inp=b.previousElementSibling||b.parentNode.querySelector('input');inp.value=u;inp.dispatchEvent(new Event('input',{bubbles:true}));adm()});fi.click();return}
+const A=d.a,arr=sc&&D[sc.k];
+if(A=='add'){const o={};sc.f.forEach(f=>o[f[0]]=f[2]=='date'?new Date().toISOString().slice(0,10):'');sc.k=='berita'?arr.unshift(o):arr.push(o);if(sc.m)ed=sc.k=='berita'?0:arr.length-1;save();adm()}
+else if(A=='del'&&confirm('Hapus item ini?')){arr.splice(i,1);ed=null;save();adm()}
+else if(A=='edit'){ed=i;adm();scrollTo(0,0)}else if(A=='done'){if(tab=='berita')D.berita.sort((a,b)=>(b.tgl||'').localeCompare(a.tgl||''));ed=null;save();adm();scrollTo(0,0)}else if(A=='up'&&i>0){[arr[i-1],arr[i]]=[arr[i],arr[i-1]];save();adm()}
+else if(A=='dn'&&i<arr.length-1){[arr[i+1],arr[i]]=[arr[i],arr[i+1]];save();adm()}
+else if(A=='out'){sessionStorage.removeItem('ok');adm()}
+else if(A=='exp'){const l=document.createElement('a');l.href=URL.createObjectURL(new Blob([JSON.stringify(D,null,1)],{type:'application/json'}));l.download='content.json';l.click()}
+else if(A=='imp'){const fi=document.createElement('input');fi.type='file';fi.accept='.json';fi.onchange=()=>fi.files[0].text().then(s=>{try{merge(JSON.parse(s));save();toast('Berhasil diimpor')}catch(z){toast('File tidak valid')}});fi.click()}
+else if(A=='rst'&&confirm('Kembalikan semua isi ke awal?')){localStorage.removeItem('pc');D=JSON.parse(JSON.stringify(DEF));toast('Isi dikembalikan')}
+else if(A=='pw'){const v=$('#npw').value;if(v.length<6)return toast('Minimal 6 karakter');ls('pw',v);$('#npw').value='';toast('Kata sandi diganti')}});
+function rs(f,cb){if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const s=Math.min(1,1000/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*s;c.height=im.height*s;c.getContext('2d').drawImage(im,0,0,c.width,c.height);cb(c.toDataURL('image/jpeg',.75))};im.src=r.result};r.readAsDataURL(f)}
+(async()=>{try{const r=await fetch('content.json',{cache:'no-store'});if(r.ok)merge(await r.json())}catch(x){}
+try{const s=ls('pc');if(s)merge(JSON.parse(s))}catch(x){}
+adm()})();
+</script></body></html>
